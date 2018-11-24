@@ -27,5 +27,5 @@ change the path in `settings.py` to the correct path. The path should be `/etc/p
 write in the `pihole-FTL.db`, however it currently can. 
 (Honestly I have no idea how `router.py` works)
 2. I can not filter by date. I attempted to install `https://github.com/silentsokolov/django-admin-rangefilter`.
-However, I couldn't get it to place nice with timestamps, or my converted time.
+However, I couldn't get it to place nice with timestamps or my converted time.
 
