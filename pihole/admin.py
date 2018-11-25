@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import FTL
+from .models import FTL, DomainName
 import socket
 
 # Register your models here.
@@ -41,3 +41,4 @@ class FTLAdmin(admin.ModelAdmin):
 
 
 admin.site.register(FTL, FTLAdmin)
+admin.site.register(DomainName)

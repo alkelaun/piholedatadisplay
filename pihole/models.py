@@ -6,7 +6,9 @@ import time
 # pihole records an integer value for 'Status', this provides the translation key
 # Originally, I put the definition inside the function. I moved it outside so it doesn't re-create the dictionary upon
 # each function call. I'm not sure that happens. It could also be ALL CAPS per convention.
+
 d_status_lookup = {1: 'Blocked', 2: 'Forwarded', 3: 'Cached'}
+
 
 class FTL(models.Model):
     id = models.IntegerField(db_column='id', primary_key=True)
@@ -32,3 +34,13 @@ class FTL(models.Model):
         app_label = 'pihole'
         db_table = 'queries'
 
+
+class DomainName(models.Model):
+    name = models.CharField(max_length=50, null=True)
+    client = models.CharField(max_length=30, null=True)
+
+    def __str__(self):
+        return (self.name, self.client)
+
+    class Meta:
+        app_label = 'pihole'
